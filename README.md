@@ -9,7 +9,7 @@ Presentation and Demo material
    4. [Workaround without Name parameter](#WorkaroundNoNameParameter)
    5. [Valid CSV File](#ValidCSVFile)
    
-### CSV file without mandatory parameter <a name="NoMandatoryParameter"></a>
+### 1. CSV file without mandatory parameter <a name="NoMandatoryParameter"></a>
 ``` powershell
 $csvDuPSUG = @"
 SamAccountName;Path
@@ -24,7 +24,7 @@ $csvDuPSUG | New-ADUser
 All errors... Manadatory parameter Name is missing
 ![image](https://cloud.githubusercontent.com/assets/10112589/24846553/ab5168ce-1dbb-11e7-8a01-9564c5692e35.png)
 
-### CSV file without SamAccountName parameter <a name="NoSamAccountNameParameter"></a>
+### 2. CSV file without SamAccountName parameter <a name="NoSamAccountNameParameter"></a>
 ```PowerShell
 $csvDuPSUG = @"
 Name;Path
@@ -39,7 +39,7 @@ $csvDuPSUG | New-ADUser -PassThru
 Only the first account is created. All other fail..
 ![image](https://cloud.githubusercontent.com/assets/10112589/24846676/492a44b2-1dbc-11e7-872b-6969103f5671.png)
 
-### Workaround creating users without SamAccountName <a name="WorkAroundNoSamAccountNameParameter"></a>
+### 3. Workaround creating users without SamAccountName <a name="WorkAroundNoSamAccountNameParameter"></a>
 ```PowerShell
 $csvDuPSUG = @"
 Name;Path
@@ -57,7 +57,7 @@ ForEach-Object{
 This works fine. Notice that SamAccountName equals Name
 ![image](https://cloud.githubusercontent.com/assets/10112589/24846727/be2337a6-1dbc-11e7-872a-d5975356bedc.png)
 
-### Try workaround without Name parameter. <a name="WorkaroundNoNameParameter"></a>
+### 4. Try workaround without Name parameter. <a name="WorkaroundNoNameParameter"></a>
 ```PowerShell
 $csvDuPSUG = @"
 SamAccountName;Path
@@ -79,7 +79,7 @@ ForEach-Object{
 Request Name input
 ![image](https://cloud.githubusercontent.com/assets/10112589/24846836/76cf2fc6-1dbd-11e7-96cf-0ad4ff035bf7.png)
 
-### Creating users with a valid CSV file <a name="ValidCSVFile"></a>
+### 5. Creating users with a valid CSV file <a name="ValidCSVFile"></a>
 ```PowerShell
 $csvDuPSUG = @"
 Name;SamAccountName;Path
