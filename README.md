@@ -77,6 +77,7 @@ ForEach-Object{
 }
 ```
 Request Name input
+
 ![image](https://cloud.githubusercontent.com/assets/10112589/24846836/76cf2fc6-1dbd-11e7-96cf-0ad4ff035bf7.png)
 
 ### 5. Creating users with a valid CSV file <a name="ValidCSVFile"></a>
@@ -95,9 +96,17 @@ Notice that Name & SamAccountName are different
 ![image](https://cloud.githubusercontent.com/assets/10112589/24846903/d5158f8a-1dbd-11e7-8568-bf28bf01015c.png)
 
 ## Describe a valid CSV file for New-ADUser 
+Using .contains method makes everything case sensitive. The -contains operator doesn't have a problem with that. So unless you want to have your Parameters precisely use -contains...
+
+Eventhough the parameters may look funky, they still work 
 ![image](https://cloud.githubusercontent.com/assets/10112589/24846222/1dc84e16-1db9-11e7-8786-e410570329e9.png)
 
 ## Dependencies
+The script won't continue if the dependencies aren't met. Once all dependencies pass the test the script continues.
+
+Creating the user this way makes for some decent error handling. User henkd already exists, his other parameters seems to be correct.
+User urvs was created and his parameters are what you'd expect
+
 ![image](https://cloud.githubusercontent.com/assets/10112589/24846296/d4998c7c-1db9-11e7-9507-7e1e5221fd26.png)
 
 
