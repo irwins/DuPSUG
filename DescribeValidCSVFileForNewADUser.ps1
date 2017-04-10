@@ -59,7 +59,7 @@ Describe 'CSV File used as input for New-ADUser'{
       Test-Path -Path $csvFile.FullName
    }
    
-   #region .Contains method
+   #region .Contains method is case sensitive. Only 'NAME' will pass
    Context 'Veryfing Manadatory Name parameter using .contains method'{
       It "CSV File contains Mandatory `'Name`' parameter .Contains( method"{
          $csvDuPSUGColumns.Contains('Name') | Should -Be $true
@@ -75,7 +75,7 @@ Describe 'CSV File used as input for New-ADUser'{
    }
    #endregion
 
-   #region -contains operator
+   #region -contains operator. All tests pass regardless of case.
    Context 'Veryfing Manadatory Name parameter using -contains operator'{
       It "CSV File contains Mandatory `'Name`' parameter -contains Operator"{
          $csvDuPSUGColumns -Contains 'Name' | Should -Be $true
